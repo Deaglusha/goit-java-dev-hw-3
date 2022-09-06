@@ -3,7 +3,7 @@ CREATE TABLE developers (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(100) NOT NULL,
 age INT NOT NULL,
-sex ENUM ('male', 'female', 'unknown')
+sex ENUM ('male', 'female', 'unknown') DEFAULT 'unknown' NOT NULL
 );
 
 -- skills (отрасль – Java, C++, C#, JS; уровень навыков - Junior, Middle, Senior)
@@ -33,8 +33,8 @@ CREATE TABLE projects (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(100) NOT NULL,
 github VARCHAR(100) NOT NULL,
-companies_id INT,
-customers_id INT,
+companies_id INT NOT NULL,
+customers_id INT NOT NULL,
 FOREIGN KEY (companies_id) REFERENCES companies(id),
 FOREIGN KEY (customers_id) REFERENCES customers(id)
 );
