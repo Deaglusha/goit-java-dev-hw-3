@@ -1,8 +1,6 @@
 --2. Найти самый дорогой проект (исходя из salary всех разработчиков).
-SELECT p.id, p.name, SUM(salary)
-FROM developers_companies
-         inner join developers d on d.id = developers_companies.developers_id
-         inner join companies p on p.id = developers_companies.companies_id
-GROUP BY p.id
-ORDER BY SUM(salary) DESC
-LIMIT 1;
+SELECT p.name, SUM (d.salary)
+FROM projects p
+INNER JOIN developers_companies dc ON p.id = dc.companies_id
+INNER JOIN developers d ON dc.developers_id = dc.companies_id
+GROUP BY p.name;

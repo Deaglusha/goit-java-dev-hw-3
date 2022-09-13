@@ -11,18 +11,20 @@ VALUES
 ('David', 28, 'male'),
 ('Harold', 21, 'male');
 
-INSERT INTO skills (developers_id, language, level)
+INSERT INTO skills (language, level)
 VALUES
-(1, 'Java', 'Senior'),
-(2, 'Java', 'Junior'),
-(3, 'Java', 'Senior'),
-(4, 'Java', 'Junior'),
-(5, 'Java', 'Junior'),
-(6, 'Java', 'Middle'),
-(7, 'C++', 'Middle'),
-(8, 'JS', 'Junior'),
-(9, 'JS', 'Senior'),
-(10, 'C#', 'Middle');
+('Java', 'Junior'),
+('Java', 'Middle'),
+('Java', 'Senior'),
+('C++', 'Junior'),
+('C++', 'Middle'),
+('C++', 'Senior'),
+('C#', 'Junior'),
+('C#', 'Middle'),
+('C#', 'Senior'),
+('JS', 'Junior'),
+('JS', 'Middle'),
+('JS', 'Senior');
 
 INSERT INTO companies (name, headcount)
 VALUES
@@ -67,3 +69,18 @@ VALUES
 (9, 5),
 (9, 3),
 (10, 5);
+
+INSERT INTO developers_skills (developers_id, skills_id)
+VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(3, 4),
+(4, 2),
+(5, 8),
+(6, 9),
+(7, 1),
+(8, 10),
+(9, 3),
+(9, 9),
+(10, 11);
