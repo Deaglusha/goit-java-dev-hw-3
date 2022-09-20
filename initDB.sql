@@ -67,3 +67,11 @@ CREATE TABLE developers_skills (
 	FOREIGN KEY (skills_id) REFERENCES skills(id),
 	UNIQUE (developers_id, skills_id)
 );
+
+CREATE TABLE developers_projects (
+	developers_id INT NOT NULL,
+	projects_id INT NOT NULL,
+	FOREIGN KEY (developers_id) REFERENCES developers(id),
+	FOREIGN KEY (projects_id) REFERENCES projects(id),
+	UNIQUE (developers_id, projects_id)
+);
